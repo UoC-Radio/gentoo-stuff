@@ -1,0 +1,89 @@
+sys-devel/gcc		no-tmpfs.conf
+sys-devel/llvm		no-tmpfs.conf
+dev-libs/gmp		no-graphite.conf
+
+sys-libs/glibc		splitdebug.conf
+sys-libs/glibc		no-lto.conf
+
+dev-libs/boost		no-lto.conf
+dev-libs/boost		no-tmpfs.conf
+
+app-office/libreoffice	no-graphite.conf
+app-office/libreoffice	no-tmpfs.conf
+
+www-client/chromium	no-lto.conf
+www-client/firefox	no-lto.conf
+www-client/firefox	no-tmpfs.conf
+www-client/lynx		no-lto.conf
+
+mail-client/thunderbird	no-tmpfs.conf
+
+dev-java/icedtea	no-graphite.conf
+dev-java/icedtea	no-tmpfs.conf
+
+dev-python/PyQt4	no-graphite.conf
+x11-libs/qt-core	no-graphite.conf
+dev-qt/* 		no-lto.conf
+dev-qt/qtwebkit 	j1.conf
+kde-base/kdelibs	no-graphite.conf
+x11-libs/wxGTK		no-tmpfs.conf
+dev-lang/mono		no-tmpfs.conf
+
+app-admin/gam-server	no-lto.conf
+app-crypt/mit-krb5	no-lto.conf
+app-emulation/virtualbox	no-lto.conf
+app-text/rarian		no-lto.conf
+dev-lang/perl		no-lto.conf
+dev-lang/ruby		no-lto.conf
+dev-libs/elfutils	no-lto.conf
+dev-python/notify-python	no-lto.conf
+dev-python/numpy	no-lto.conf
+dev-tex/luatex		no-lto.conf
+dev-vcs/cvs		no-lto.conf
+media-libs/alsa-lib	no-lto.conf
+media-libs/x264		no-lto.conf
+media-sound/pulseaudio	no-lto.conf
+media-sound/wavpack	no-lto.conf
+media-video/libav	no-lto.conf
+media-video/mplayer2	no-lto.conf
+sys-apps/hwinfo		no-lto.conf
+sys-apps/pciutils	no-lto.conf
+sys-devel/llvm		no-lto.conf
+x11-base/xorg-server	no-lto.conf
+x11-drivers/xf86-video-intel	no-lto.conf
+x11-libs/cairo		no-lto.conf
+x11-libs/wxGTK		no-lto.conf
+sys-libs/efivar		no-lto.conf
+dev-lang/spidermonkey	no-lto.conf
+sys-apps/man-db		no-lto.conf
+media-gfx/graphviz	no-lto.conf
+gnome-base/libbonobo	no-lto.conf
+dev-ruby/nokogiri	no-lto.conf
+dev-libs/libaio		no-lto.conf
+net-proxy/privoxy	no-lto.conf
+dev-util/valgrind	no-lto.conf
+net-fs/samba		no-lto.conf
+app-crypt/dieharder	no-lto.conf
+net-wireless/iw		no-lto.conf
+net-misc/tightvnc	no-lto.conf
+sys-process/audit	no-lto.conf
+media-libs/flac		no-lto.conf
+net-wireless/gqrx	no-lto.conf
+dev-cpp/gtkmm		no-lto.conf
+dev-cpp/glibmm		no-lto.conf
+sys-block/gparted	no-lto.conf
+dev-libs/libgcrypt	no-lto.conf
+app-crypt/gnupg		no-lto.conf
+dev-util/perf		no-lto.conf
+dev-lang/mujs		no-lto.conf
+sys-devel/gettext	no-lto.conf
+media-libs/mesa         no-lto.conf
+net-nds/rpcbind		no-lto.conf
+net-libs/libtirpc	no-lto.conf
+net-nds/nfs_utils	no-lto.conf
+media-sound/mixxx	no-lto.conf
+media-video/vlc		no-lto.conf
+dev-libs/wayland	no-lto.conf
+media-sound/audacious   no-lto.conf
+dev-qt/qtchooser	no-lto.conf
+net-misc/dhcp		no-lto.conf

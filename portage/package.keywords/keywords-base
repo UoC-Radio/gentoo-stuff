@@ -1,0 +1,17 @@
+# Our own stuff
+=media-radio/audio-scheduler-9999 ~amd64
+=media-radio/icestreamer-9999 ~amd64
+=media-radio/jmpxrds-9999 ~amd64
+=media-sound/audio-coffin-9999 ~amd64
+
+# Jack stuff + calf
+media-sound/jack-audio-connection-kit ~amd64
+media-sound/qjackctl ~amd64
+media-plugins/calf ~amd64
+
+# Versions < 2.0 bring in Qt4
+=media-sound/mixxx-2.0.0-r3 ~amd64
+
+# Newer versions bring in jack and gtk3 support
+www-client/firefox ~amd64
+

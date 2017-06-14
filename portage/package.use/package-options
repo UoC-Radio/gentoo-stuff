@@ -1,0 +1,94 @@
+# darkice
+media-sound/darkice -alsa -pulseaudio -opus
+
+# audio-scheduler
+media-radio/audio-scheduler -alsa -pulseaudio
+media-libs/gst-plugins-bad -X -wayland -opengl
+media-plugins/gst-plugins-meta -X -alsa -pulseaudio -theora -vaapi -mpeg -vpx -ffmpeg
+
+# icestreamer
+media-radio/icestreamer -alsa -pulseaudio -vpx
+
+# GCC stuff
+sys-devel/gcc fortran graphite openmp
+
+# LLVM stuff
+sys-devel/llvm clang
+
+# They bring in a lot of useless stuff
+dev-libs/libgdata -gnome
+gnome-base/nautilus -previewer
+sys-libs/ntdb -python
+
+# Also brings in useless stuff
+media-gfx/graphviz -pdf
+sys-libs/libcap-ng -python
+sys-apps/man-db -nls
+
+# Get rid of ibus
+dev-qt/qtgui -ibus
+gnome-base/gnome-control-center -i18n
+gnome-base/gnome-shell -nls
+
+# Bring in Gtk+2 for no reason
+media-gfx/fontforge -gtk
+dev-vcs/git -gtk
+net-dialup/ppp -gtk
+
+# Have gtk and gtk3 -> keep gtk3 only
+app-i18n/ibus -X -gtk
+media-libs/libcanberra -gtk
+
+# Keep things clean
+mail-client/thunderbird ldap system-cairo system-icu system-jpeg system-libvpx system-sqlite
+www-client/firefox system-cairo system-icu system-jpeg system-libvpx system-sqlite system-harfbuzz system-libevent jit custom-optimization
+net-misc/iputils -openssl nettle
+net-misc/tightvnc -java
+
+# Prevent xterm from installing (it pulls libutempter wich contains a suid binary)
+x11-apps/xinit minimal
+
+# No need for the gui, brings in a lot of old stuff
+sys-apps/pcsc-tools -gtk
+
+# Samba stuff
+net-fs/samba -server gnutls -smbclient client
+media-video/ffmpeg -samba
+net-nds/openldap minimal
+
+# Smartcard stuff -> use opensc/ccid (Needs patching !)
+app-crypt/gnupg -usb
+
+# VMWare stuff, don't use modules from package, use those that come with the kernel
+app-emulation/open-vm-tools -modules
+
+# Gnuradio stuff
+net-wireless/gnuradio grc wxwidgets
+net-wireless/gr-osmosdr rtlsdr iqbalance
+
+# VLC
+media-video/vlc -gnutls -gnome qt5 -dvd -dvbpsi -encode -mpeg -ncurses postproc
+sys-libs/zlib minizip
+
+# Various
+dev-libs/gmp pgo
+app-portage/layman git -subversion -mercurial
+net-misc/vinagre rdp
+media-sound/audacious -gtk gtk3
+media-sound/mixxx -ffmpeg
+media-plugins/audacious-plugins http mms ffmpeg -gtk gtk3
+net-misc/networkmanager -nss -wext
+app-arch/cabextract extras
+net-libs/liboauth -nss
+media-libs/freetype -cleartype_hinting
+dev-lang/mono minimal
+sys-apps/busybox -pam
+media-libs/clutter egl
+x11-themes/vertex-theme gnome-shell
+sys-kernel/gentoo-sources symlink
+media-fonts/infinality-ultimate-meta minimal
+net-fs/nfs-utils -nfsv4 -libmount -nfsdcld -nfsidmap -ipv6
+media-sound/jack-audio-connection-kit -libsamplerate -celt -opus -sndfile -readline
+media-sound/sox -ogg -openmp -opus -png -pulseaudio
+app-editors/gedit -python
+net-misc/wget -idn
