@@ -94,3 +94,4 @@ app-editors/gedit -python
 net-misc/wget -idn
 x11-libs/libxcb xkb
 media-libs/mesa gles2
+media-libs/cogl gles2
