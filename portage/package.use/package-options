@@ -93,3 +93,4 @@ media-sound/sox -ogg -openmp -opus -png -pulseaudio
 app-editors/gedit -python
 net-misc/wget -idn
 x11-libs/libxcb xkb
+media-libs/mesa gles2
