@@ -88,3 +88,4 @@ media-sound/audacious   no-lto.conf
 dev-qt/qtchooser	no-lto.conf
 net-misc/dhcp		no-lto.conf
 dev-lang/rust		no-tmpfs.conf
+dev-lang/rust		no-lto.conf
