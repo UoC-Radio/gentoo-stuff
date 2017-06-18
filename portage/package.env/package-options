@@ -23,8 +23,8 @@ dev-java/icedtea	no-tmpfs.conf
 
 dev-python/PyQt4	no-graphite.conf
 x11-libs/qt-core	no-graphite.conf
-dev-qt/* 		no-lto.conf
-dev-qt/qtwebkit 	j1.conf
+dev-qt/*		no-lto.conf
+dev-qt/qtwebkit		j1.conf
 kde-base/kdelibs	no-graphite.conf
 x11-libs/wxGTK		no-tmpfs.conf
 dev-lang/mono		no-tmpfs.conf
@@ -87,3 +87,4 @@ dev-libs/wayland	no-lto.conf
 media-sound/audacious   no-lto.conf
 dev-qt/qtchooser	no-lto.conf
 net-misc/dhcp		no-lto.conf
+dev-lang/rust		no-tmpfs.conf
