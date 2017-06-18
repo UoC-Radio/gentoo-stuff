@@ -89,3 +89,4 @@ dev-qt/qtchooser	no-lto.conf
 net-misc/dhcp		no-lto.conf
 dev-lang/rust		no-tmpfs.conf
 dev-lang/rust		no-lto.conf
+dev-util/cargo		no-lto.conf
