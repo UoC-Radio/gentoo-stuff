@@ -34,6 +34,9 @@ eclean -d distfiles
 # Now fix file capability bits
 ${DIR}/fixcaps.sh
 
+# Do a ccache cleanup
+CCACHE_DIR="/var/tmp/ccache" ccache -c
+
 # Finaly update the symlink for the lto plugin, in case
 # we updated gcc
 GCC_VERSION=`gcc -dumpversion`
