@@ -17,10 +17,10 @@ echo "Updating system..."
 # Note2: I removed tpe from my kernel config since I didn't like
 # it much and was buggy.
 #sysctl kernel.grsecurity.tpe=0 &> /dev/null
-sysctl kernel.pax.softmode=1 &> /dev/null
+#sysctl kernel.pax.softmode=1 &> /dev/null
 emerge -uDN @world --with-bdeps=y --backtrack=30 --keep-going --quiet --autounmask-write
 emerge @preserved-rebuild --quiet
-sysctl kernel.pax.softmode=0 &> /dev/null
+#sysctl kernel.pax.softmode=0 &> /dev/null
 #sysctl kernel.grsecurity.tpe=1 &> /dev/null
 
 echo "Cleaning up..."
