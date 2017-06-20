@@ -5,7 +5,7 @@ CPU_FLAGS_X86="aes avx avx2 fma3 mmx mmxext popcnt sse sse2 sse3 sse4_1 sse4_2 s
 CFLAGS_OVERRIDE=""
 
 # Device configuration
-INPUT_DEVICES="keyboard mouse evdev vmmouse"
+INPUT_DEVICES="keyboard mouse evdev"
 VIDEO_CARDS="vmware vesa"
 LIRC_DEVICES=""
 LCD_DEVICES=""
