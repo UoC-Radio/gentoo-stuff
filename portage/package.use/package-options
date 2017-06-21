@@ -64,9 +64,6 @@ net-fs/samba -server gnutls -smbclient client
 media-video/ffmpeg -samba
 net-nds/openldap minimal
 
-# VMWare stuff, don't use modules from package, use those that come with the kernel
-app-emulation/open-vm-tools -modules
-
 # Clean up nfs-utils, we got a couple
 # of crashes with some of these options
 # enabled
@@ -82,37 +79,3 @@ media-libs/freetype -cleartype_hinting
 sys-apps/busybox -pam
 x11-themes/vertex-theme gnome-shell
 media-fonts/infinality-ultimate-meta minimal
-
-
-### DEPENDENCIES ###
-
-# Required by gnome-session
-# qtwayland, libepoxy, mesa-progs
-# and mutter
-media-libs/mesa egl
-
-# Required by gnome-session
-media-libs/mesa gles2
-
-# Since network manager is enabled
-# on gnome-shell by default, it's also
-# needed on gnome-control-center
-gnome-base/gnome-control-center networkmanager
-
-# Needed by mozilla when using
-# system-libvpx and system-sqlite
-media-libs/libvpx postproc
-dev-db/sqlite secure-delete
-
-# Required by itstool (brought in by gnome)
-dev-libs/libxml2 python
-
-# Needed by xdg-utils
-app-text/xmlto text
-
-# Needed by qtcore
-dev-libs/libpcre pcre16
-
-# Needed by qtx11extras, brought in by
-# qjackctl
-x11-libs/libxcb xkb
