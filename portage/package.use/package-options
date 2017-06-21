@@ -94,6 +94,11 @@ media-libs/mesa egl
 # Required by gnome-session
 media-libs/mesa gles2
 
+# Since network manager is enabled
+# on gnome-shell by default, it's also
+# needed on gnome-control-center
+gnome-base/gnome-control-center networkmanager
+
 # Needed by mozilla when using
 # system-libvpx and system-sqlite
 media-libs/libvpx postproc
