@@ -11,7 +11,7 @@ LIRC_DEVICES=""
 LCD_DEVICES=""
 
 #Virtualization
-USE="vmware"
+USE="${USE} vmware"
 
 # Virtualization
 
