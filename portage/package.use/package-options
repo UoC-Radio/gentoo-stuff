@@ -18,17 +18,10 @@ sys-devel/llvm clang
 # They bring in a lot of useless stuff
 dev-libs/libgdata -gnome
 gnome-base/nautilus -previewer
-sys-libs/ntdb -python
 
 # Also brings in useless stuff
 media-gfx/graphviz -pdf
-sys-libs/libcap-ng -python
 sys-apps/man-db -nls
-
-# Get rid of ibus
-dev-qt/qtgui -ibus
-gnome-base/gnome-control-center -i18n
-gnome-base/gnome-shell -nls
 
 # Bring in Gtk+2 for no reason
 media-gfx/fontforge -gtk
@@ -38,6 +31,8 @@ net-dialup/ppp -gtk
 # Have gtk and gtk3 -> keep gtk3 only
 app-i18n/ibus -X -gtk
 media-libs/libcanberra -gtk
+media-sound/audacious -gtk gtk3
+media-plugins/audacious-plugins http mms ffmpeg -gtk gtk3
 
 # Keep things clean
 mail-client/thunderbird ldap system-cairo system-icu system-jpeg system-libvpx system-sqlite
@@ -74,24 +69,44 @@ sys-libs/zlib minizip
 dev-libs/gmp pgo
 app-portage/layman git -subversion -mercurial
 net-misc/vinagre rdp
-media-sound/audacious -gtk gtk3
 media-sound/mixxx -ffmpeg
-media-plugins/audacious-plugins http mms ffmpeg -gtk gtk3
 net-misc/networkmanager -nss -wext
 app-arch/cabextract extras
 net-libs/liboauth -nss
 media-libs/freetype -cleartype_hinting
 dev-lang/mono minimal
 sys-apps/busybox -pam
-media-libs/clutter egl
 x11-themes/vertex-theme gnome-shell
 sys-kernel/gentoo-sources symlink
 media-fonts/infinality-ultimate-meta minimal
 net-fs/nfs-utils -nfsv4 -libmount -nfsdcld -nfsidmap -ipv6
 media-sound/jack-audio-connection-kit -libsamplerate -celt -opus -sndfile -readline
 media-sound/sox -ogg -openmp -opus -png -pulseaudio
-app-editors/gedit -python
-net-misc/wget -idn
 x11-libs/libxcb xkb
-media-libs/mesa gles2
+
+# Enable EGL backend on clutter
+media-libs/clutter egl
 media-libs/cogl gles2
+
+# Required by gnome-session
+# qtwayland, libepoxy, mesa-progs
+# and mutter
+media-libs/mesa egl
+
+# Required by gnome-session
+media-libs/mesa gles2
+
+# Needed by mozilla when using
+# system-libvpx and system-sqlite
+media-libs/libvpx postproc
+dev-db/sqlite secure-delete
+
+# Required by itstool (brought in by gnome)
+dev-libs/libxml2 python
+
+# Needed by xdg-utils
+app-text/xmlto text
+
+# Needed by qtcore
+dev-libs/libpcre pcre16
+
