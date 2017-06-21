@@ -1,5 +1,22 @@
-# darkice
-media-sound/darkice -alsa -pulseaudio -opus
+# Kernel
+sys-kernel/gentoo-sources symlink
+
+# GCC
+sys-devel/gcc graphite openmp
+
+# LLVM
+sys-devel/llvm clang
+
+# Network Manager
+net-misc/networkmanager -nss -wext
+net-misc/iputils -openssl nettle
+
+# Our repository is in git, so we
+# want git support on layman
+app-portage/layman git -subversion -mercurial
+
+# Jackd
+media-sound/jack-audio-connection-kit -libsamplerate -celt -opus -sndfile -readline
 
 # audio-scheduler
 media-radio/audio-scheduler -alsa -pulseaudio
@@ -9,21 +26,27 @@ media-plugins/gst-plugins-meta -X -alsa -pulseaudio -theora -vaapi -mpeg -vpx -f
 # icestreamer
 media-radio/icestreamer -alsa -pulseaudio -vpx
 
-# GCC stuff
-sys-devel/gcc fortran graphite openmp
+# darkice
+media-sound/darkice -alsa -pulseaudio -opus
 
-# LLVM stuff
-sys-devel/llvm clang
+# Audacious
+media-sound/audacious -gtk gtk3
+media-plugins/audacious-plugins http mms ffmpeg -gtk gtk3
+
+# Mixxx
+media-sound/mixxx -ffmpeg
+
+# VLC
+media-video/vlc -gnutls -gnome qt5 -dvd -dvbpsi -encode -mpeg -ncurses postproc
+sys-libs/zlib minizip
 
 # They bring in a lot of useless stuff
 dev-libs/libgdata -gnome
 gnome-base/nautilus -previewer
-
-# Also brings in useless stuff
 media-gfx/graphviz -pdf
 sys-apps/man-db -nls
 
-# Bring in Gtk+2 for no reason
+# They bring in Gtk+2 for no reason
 media-gfx/fontforge -gtk
 dev-vcs/git -gtk
 net-dialup/ppp -gtk
@@ -31,62 +54,41 @@ net-dialup/ppp -gtk
 # Have gtk and gtk3 -> keep gtk3 only
 app-i18n/ibus -X -gtk
 media-libs/libcanberra -gtk
-media-sound/audacious -gtk gtk3
-media-plugins/audacious-plugins http mms ffmpeg -gtk gtk3
 
-# Keep things clean
+# Keep Mozilla from bringing in duplicates
 mail-client/thunderbird ldap system-cairo system-icu system-jpeg system-libvpx system-sqlite
 www-client/firefox system-cairo system-icu system-jpeg system-libvpx system-sqlite system-harfbuzz system-libevent jit custom-optimization
-net-misc/iputils -openssl nettle
-net-misc/tightvnc -java
 
-# Prevent xterm from installing (it pulls libutempter wich contains a suid binary)
+# Prevent xterm from installing
+# (it pulls libutempter wich contains a suid binary)
 x11-apps/xinit minimal
 
-# No need for the gui, brings in a lot of old stuff
-sys-apps/pcsc-tools -gtk
-
-# Samba stuff
+# Samba / OpenLDAP stuff
 net-fs/samba -server gnutls -smbclient client
 media-video/ffmpeg -samba
 net-nds/openldap minimal
 
-# Smartcard stuff -> use opensc/ccid (Needs patching !)
-app-crypt/gnupg -usb
-
 # VMWare stuff, don't use modules from package, use those that come with the kernel
 app-emulation/open-vm-tools -modules
 
-# Gnuradio stuff
-net-wireless/gnuradio grc wxwidgets
-net-wireless/gr-osmosdr rtlsdr iqbalance
-
-# VLC
-media-video/vlc -gnutls -gnome qt5 -dvd -dvbpsi -encode -mpeg -ncurses postproc
-sys-libs/zlib minizip
-
-# Various
-dev-libs/gmp pgo
-app-portage/layman git -subversion -mercurial
-net-misc/vinagre rdp
-media-sound/mixxx -ffmpeg
-net-misc/networkmanager -nss -wext
-app-arch/cabextract extras
-net-libs/liboauth -nss
-media-libs/freetype -cleartype_hinting
-dev-lang/mono minimal
-sys-apps/busybox -pam
-x11-themes/vertex-theme gnome-shell
-sys-kernel/gentoo-sources symlink
-media-fonts/infinality-ultimate-meta minimal
+# Clean up nfs-utils, we got a couple
+# of crashes with some of these options
+# enabled
 net-fs/nfs-utils -nfsv4 -libmount -nfsdcld -nfsidmap -ipv6
-media-sound/jack-audio-connection-kit -libsamplerate -celt -opus -sndfile -readline
-media-sound/sox -ogg -openmp -opus -png -pulseaudio
-x11-libs/libxcb xkb
 
 # Enable EGL backend on clutter
 media-libs/clutter egl
 media-libs/cogl gles2
+
+# Various
+dev-libs/gmp pgo
+media-libs/freetype -cleartype_hinting
+sys-apps/busybox -pam
+x11-themes/vertex-theme gnome-shell
+media-fonts/infinality-ultimate-meta minimal
+
+
+### DEPENDENCIES ###
 
 # Required by gnome-session
 # qtwayland, libepoxy, mesa-progs
@@ -110,3 +112,6 @@ app-text/xmlto text
 # Needed by qtcore
 dev-libs/libpcre pcre16
 
+# Needed by qtx11extras, brought in by
+# qjackctl
+x11-libs/libxcb xkb
