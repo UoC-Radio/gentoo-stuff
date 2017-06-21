@@ -51,10 +51,6 @@ media-gfx/fontforge -gtk
 dev-vcs/git -gtk
 net-dialup/ppp -gtk
 
-# Have gtk and gtk3 -> keep gtk3 only
-app-i18n/ibus -X -gtk
-media-libs/libcanberra -gtk
-
 # Keep Mozilla from bringing in duplicates
 mail-client/thunderbird ldap system-cairo system-icu system-jpeg system-libvpx system-sqlite
 www-client/firefox system-cairo system-icu system-jpeg system-libvpx system-sqlite system-harfbuzz system-libevent jit custom-optimization
