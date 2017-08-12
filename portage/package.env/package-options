@@ -22,7 +22,7 @@ dev-java/icedtea	no-graphite.conf
 dev-java/icedtea	no-tmpfs.conf
 
 dev-python/PyQt4	no-graphite.conf
-x11-libs/qt-core	no-graphite.conf
+dev-qt/qtcore		no-graphite.conf
 dev-qt/*		no-lto.conf
 dev-qt/qtwebkit		j1.conf
 kde-base/kdelibs	no-graphite.conf
