@@ -90,3 +90,5 @@ net-misc/dhcp		no-lto.conf
 dev-lang/rust		no-tmpfs.conf
 dev-lang/rust		no-lto.conf
 dev-util/cargo		no-lto.conf
+
+sys-auth/pam_ldap	no-lto.conf
