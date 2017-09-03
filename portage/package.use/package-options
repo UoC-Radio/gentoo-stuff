@@ -4,9 +4,6 @@ sys-kernel/gentoo-sources symlink
 # GCC
 sys-devel/gcc graphite openmp
 
-# LLVM
-sys-devel/llvm clang
-
 # Network Manager
 net-misc/networkmanager -nss -wext
 net-misc/iputils -openssl nettle
@@ -52,7 +49,7 @@ dev-vcs/git -gtk
 net-dialup/ppp -gtk
 
 # Keep Mozilla from bringing in duplicates
-mail-client/thunderbird ldap system-cairo system-icu system-jpeg system-libvpx system-sqlite
+mail-client/thunderbird ldap system-cairo system-icu system-jpeg system-libvpx system-sqlite system-harfbuzz system-libevent
 www-client/firefox system-cairo system-icu system-jpeg system-libvpx system-sqlite system-harfbuzz system-libevent jit custom-optimization
 
 # Prevent xterm from installing
