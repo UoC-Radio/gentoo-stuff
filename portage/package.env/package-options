@@ -92,3 +92,5 @@ dev-lang/rust		no-lto.conf
 dev-util/cargo		no-lto.conf
 
 sys-auth/pam_ldap	no-lto.conf
+
+media-sound/jack-audio-connection-kit no-lto.conf
